@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<style media="screen">
+div.image {
+  position: absolute;
+  left: 600px;
+  top:  100px;
+}
+</style>
+
+<div class="centerstage">
+  {% for post in post_list %}
+  {% if post.count == 0 %}
+  <h2>Hello</h2>
+  {% endif %}
+  <div class="post">
+    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h1>
+    <div class="date">
+      <p>Published on: {{post.published_date}}</p>
+    </div>
+    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{post.approve_comments.count}}</a>
+  </div>
+  {% endfor %}
+</div>
+<div class="image">
+  <img src="https://i.imgur.com/1GwFOuX.png" width="550" height="600">
+</div>
+{% endblock %}

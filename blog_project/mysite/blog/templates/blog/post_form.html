@@ -1,0 +1,27 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<style media="screen">
+div.image {
+  position: relative;
+  left: 700px;
+  bottom: 30px;
+}
+</style>
+
+<h1>New Post</h1>
+<form class="post-form" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" class="save btn btn-default">Save</button>
+</form>
+
+<div class="image">
+  <img src="https://i.imgur.com/T4UaJSw.jpg" width="430" height="480">
+</div>
+
+<script>
+  var editor = new MediumEditor('.editable');
+</script>
+
+{% endblock %}

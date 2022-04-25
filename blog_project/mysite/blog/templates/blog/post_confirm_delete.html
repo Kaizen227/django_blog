@@ -1,0 +1,8 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete {{object}}? You cannot get it back once it's gone.</p>
+  <input type="submit" class="btn btn-danger" value="Confirm">
+</form>
+{% endblock %}
