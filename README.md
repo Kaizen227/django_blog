@@ -8,3 +8,5 @@ Deleting a post
 Making a comment
 Approving it
 Deleting a comment
+
+Note: The login is configured to work by admin's username and password. 
